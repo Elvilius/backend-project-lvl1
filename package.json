@@ -4,21 +4,30 @@
   "description": "brain-games",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
   },
-
-"bin": {
-    "brani-games": "src/bin/brain-games.js"
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Elvilius/backend-project-lvl1.git"
   },
+  "files": [
+    "dist"
+  ],
   "author": "Victor Sergienko",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Elvilius/backend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/Elvilius/backend-project-lvl1#readme"
+  "homepage": "https://github.com/Elvilius/backend-project-lvl1#readme",
+  "dependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/node": "^7.5.0",
+    "@babel/preset-env": "^7.5.4"
+  }
 }
